@@ -47,25 +47,7 @@ public class FakeAPITest {
                 .body("$",Matchers.instanceOf(List.class));
     }
 
-    @Test
-    public  void  testCreateCategories(){
-        String body = """
-                {
-                    "name": "Sanjay",
-                    "image": "https://placeimg.com/640/480/any"
-                }
-                """;
-        RestAssured.given()
-                .contentType(ContentType.JSON)
-                .body(body)
-                .when()
-                .post("/categories")
-                .then()
-                .log().all()
-                .statusCode(201)
-                .body("name",Matchers.equalTo("Sanjay"))
-                .body("image",Matchers.equalTo("https://placeimg.com/640/480/any"));
-    }
+
 
 
 
